@@ -40,7 +40,19 @@
     
 # print(give_another_break())
 def quadratic(a, b, c):
-    x - math.inf
-    y = a*(x**2)+b*x+c
-    print(y)
+    import math
+    a= int(input("enter a:"))
+    b= int(input("enter b:"))
+    c= int(input("enter c:"))
+    print()
+    discriminant= (b**2)-(4*a*c)
+    if discriminant<0 :
+        print("no real solution")
+    else:
+        discriminant
+        x_1= (-b + mth.sqrt(discriminant) / 2 * a)
+        x_2= (-b - mth.sqrt(discriminant) / 2 * a)
+        return x_1, x_2
+        
+
     
