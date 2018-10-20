@@ -70,7 +70,7 @@ def DrunkardWalk(x, y, n):
     for step in range(n):
         outcome = random.randint(1, 4)
         Walk = direction[outcome]
-        Walk(50)
+        Walk(10)
         if outcome == 1:
             y = y + 1
         elif outcome == 2:
@@ -91,7 +91,7 @@ def DrunkardWalk(x, y, n):
     print("after", n, "steps, we are", net_distance, "intersections away")
     turtle.mainloop()
 
-DrunkardWalk(0, 6, 5)
+DrunkardWalk(26, 8, 100)
 
 
 
