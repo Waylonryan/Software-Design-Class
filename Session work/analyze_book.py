@@ -49,17 +49,23 @@ def different_words(hist):
     return len(hist)
 
 
-def most_common(hist):
+def most_common(hist, excluding_stopwords=True):
     """Makes a list of word-freq pairs in descending order of frequency.
     hist: map from word to frequency
     returns: list of (frequency, word) pairs
     """
     t = []
-    for key, value in hist.items():
+    stopwords = process_file('StopWords.txt', False)
+    stopwords = list(stopwords.keys())
+    print(stopwords)
+
+    for word, freq in hist.items():
+        if excluding_stopwords:
+            if word in stopwords:
+                continue
         t.append((value, key))
 
-    t.sort()
-    t.reverse()
+    t.sort(reverse=True)
     return t    
 
 
@@ -97,7 +103,7 @@ def random_word(hist):
 
 
 def main():
-    hist = process_file('pride and prejudice', skip_header=True)
+    hist = process_file('Pride and Prejudice.txt', skip_header=True)
     print(hist)
     print('Total number of words:', total_words(hist))
     print('Number of different words:', different_words(hist))
